@@ -91,7 +91,7 @@ const eachmonth = async () => {
         },
         {
             $project: {
-                _id : 1,
+                _id : 0,
                 bestSellingBook : 1,
                 maxQuantity : 1
             }
