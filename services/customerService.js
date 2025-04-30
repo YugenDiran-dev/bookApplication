@@ -35,7 +35,6 @@ const checkdata = async(storeValues)=>{
     }
     const msg = JSON.stringify(details);
 
-    
 
     const transporter = nodemailer.createTransport(
         {
