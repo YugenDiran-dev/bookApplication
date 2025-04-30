@@ -7,7 +7,7 @@ const regjsonschema = {
         password: {type: "string"},
         role: {type: "string"}
     },
-    required: ["email","password","role"],
+    required: ["email","password"],
     additionalProperties: false
   }
   
