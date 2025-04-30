@@ -1,14 +1,5 @@
-const account = require("../models/registerSchema")
 const {registerUser,loginUser} = require("../services/registerService")
 
-
-
-//get
-const getAccount = async (req, res) => {
-
-    const acc = await account.find();
-    return res.status(200).json(acc)
-}
 
 //post
 const postAccount = async (req, res) => {
@@ -37,4 +28,4 @@ const loginAccount = async (req, res) => {
     }
 }
 
-module.exports = {getAccount,postAccount,loginAccount};
+module.exports = {postAccount,loginAccount};
