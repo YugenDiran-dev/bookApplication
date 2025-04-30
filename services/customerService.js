@@ -2,6 +2,7 @@ const env = require("dotenv").config();
 const orderbooks = require("../models/orderbooks");
 const books = require("../models/bookmodels")
 const account = require("../models/registerSchema");
+const sendEmail = require("../services/eventemitter")
 
 
 const checkdata = async(storeValues)=>{
@@ -38,7 +39,7 @@ const checkdata = async(storeValues)=>{
     const sub = "Your Recent Book Orders"
 
 
-//sendmail(email,"Your Recent Book Orders",msg);
+    sendEmail(email,sub,msg);
 
     return {status:201,message:"ordered successfully"};
 }

@@ -39,7 +39,7 @@ const putbook = async(id,req,res)=>{
     const getbook = await books.findOne({bookId : id});
         if(!getbook){
             res.status(400);
-            throw new Error("Wrong ID or No book available");
+            throw new Error("Wrong ID");
         }
         const updatebook = await books.findOneAndUpdate({id:id}, req.body, {new : true});
         return updatebook;
@@ -47,13 +47,16 @@ const putbook = async(id,req,res)=>{
 
 const erasebook = async(id,req,res)=>{
 
-    const getbook = await books.findOne(id);
-
-    if(!getbook){
-        res.status(400);
-        throw new Error("Wrong ID");
+    // const getbook = await books.findOne({bookId : id});
+    // if(!getbook){
+    //     throw {status:400, message:"Wrong ID or No book available"}
+    //     // res.status(400);
+    //     // throw new Error("Wrong ID");
+    // }
+    const ans = await books.findOneAndDelete(id);
+    if(!ans){
+        res.status(400).json({message:ans.message})
     }
-    const ans = await books.findOneAndDelete(getbook);
 
     return ans;
 
