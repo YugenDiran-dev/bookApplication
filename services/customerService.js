@@ -35,11 +35,11 @@ const checkdata = async(storeValues)=>{
         TotAmount
 
     }
-    const msg = JSON.stringify(details);
+    
     const sub = "Your Recent Book Orders"
 
 
-    sendEmail(email,sub,msg);
+    sendEmail(email,sub,details);
 
     return {status:201,message:"ordered successfully"};
 }

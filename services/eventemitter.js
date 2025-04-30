@@ -22,7 +22,7 @@ emitter.on('sendmail', async({to,sub,msg}) => {
         from: "Online Book Library",
         to: to,
         subject:sub,
-        html: `<h2> Your Orders: </h2><br><p>${msg}</p><br>
+        html: `<h2> Your Orders: </h2><br><p>Book Name :${msg.Book_Name}<br>Price :${msg.price}<br>Quantity :${msg.quantity}</p><br>
             <p><strong>Total Amount :${msg.TotAmount}</p><br>
             <h3>Thank You for shopping with us! :)`
     }
