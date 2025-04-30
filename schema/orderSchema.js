@@ -8,7 +8,7 @@ const orderjsonschema = {
         email: {type: "string"},
         bookId:{type: "integer"},
         quantity:{type: "integer"},
-        orderDate:{type: "integer"}
+        orderDate:{type: "string"}
     },
 
     required: ["orderId","email","bookId","quantity","orderDate"],

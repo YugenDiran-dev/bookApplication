@@ -44,7 +44,7 @@ const updateBooks = asynchandle(async(req,res)=>{
 //delete
 const deletebooks = asynchandle(async(req,res)=>{
 
-    const id = req.query.id;
+    const id = req.params.id;
     const result = await erasebook(id);
     if(!result){
         res.status(500).json({message:"something went wrong"})
