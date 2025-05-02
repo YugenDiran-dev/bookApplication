@@ -32,8 +32,8 @@ const getbooksbyId = asynchandle(async(req,res)=>{
 
 //update 
 const updateBooks = asynchandle(async(req,res)=>{
-    const id = req.params.bookId;
-    const result = await putbook(id);
+    const data = req.body;
+    const result = await putbook(data);
     if(!result){
         res.status(500).json({message:"something went wrong"})
     }
