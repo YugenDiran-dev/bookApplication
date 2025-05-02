@@ -20,7 +20,7 @@ const registerRoutes = require("./routes/registerRouter");
 const aggregateRouter = require("./routes/aggregaterouter");
 const bookRouter = require("./routes/bookRouter");
 const validateToken = require("./middleware/validatetoken");
-const mail = require("./routes/emailrouter");
+const mail = require("./routes/orderRouter");
 
 
 app.use(registerRoutes);
