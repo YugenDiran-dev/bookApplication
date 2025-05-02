@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 const env = require("dotenv").config();
 
 const registerUser = async(storeValues)=>{
-     const {email,password,role} = storeValues;
+     const {email,password} = storeValues;
 
      const check = await account.findOne({email:email})
      if(check == true){
@@ -16,14 +16,14 @@ const registerUser = async(storeValues)=>{
         let hashpassword;
         hashpassword = await bycrypt.hash(password,10)
         
-        if(!email || !password || !role){
+        if(!email || !password){
             throw{ status:400 , message:"Field required"}
         } 
 
         const newUser = new account({
             email,
             password:hashpassword,
-            role
+            role:'user'
         })
 
         await newUser.save();
@@ -37,7 +37,7 @@ const registerUser = async(storeValues)=>{
 
 const loginUser = async(validAccount)=>{
 
-    const {email,password,role} = validAccount;
+    const {email,password} = validAccount;
 
     try{
         const check = await account.findOne({email:email})

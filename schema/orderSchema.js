@@ -4,14 +4,13 @@ const ajvInstance = require("./ajvInstance");
 const orderjsonschema = {
     type:"object",
     properties:{
-        orderId: {type: "integer" },
         email: {type: "string"},
         bookId:{type: "integer"},
         quantity:{type: "integer"},
         orderDate:{type: "string"}
     },
 
-    required: ["orderId","email","bookId","quantity","orderDate"],
+    required: ["email","bookId","quantity","orderDate"],
     additionalProperties: false
 }
 

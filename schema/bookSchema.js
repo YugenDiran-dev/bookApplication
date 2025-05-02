@@ -9,7 +9,7 @@ const bookjsonschema = {
         price:{type: "integer"},
         number_of_books:{type: "integer"}
     },
-    required: ["bookId","title","author","price","number_of_books"],
+    required: ["title","author","price","number_of_books"],
     additionalProperties: false
   }
 

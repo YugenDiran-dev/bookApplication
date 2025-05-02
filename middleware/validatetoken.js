@@ -3,10 +3,10 @@ const jwt = require("jsonwebtoken")
 const env = require("dotenv").config()
 
 const validateToken = asyncHandler(async (req, res, next) => {
-    let token;
+    // let token;
     let authHeader = req.headers.authorization
 
-    token = authHeader.split(" ")[1] || authHeader;
+    const token = authHeader.split(" ")[1] || authHeader;
     if (!token) {
         res.status(401);
         throw new Error("UnAuthorized login");

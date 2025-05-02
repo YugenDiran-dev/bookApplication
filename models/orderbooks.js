@@ -4,7 +4,6 @@ const orderBooks = mongoose.Schema({
 
     orderId:{
         type: Number,
-        required:true,
         unique:true
     },
     email:{

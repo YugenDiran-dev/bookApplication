@@ -6,8 +6,8 @@ const postAccount = async (req, res) => {
 
     console.log(req.body);
     try {
-        const { email, password, role } = req.body;
-        const storeValues = ({ email, password, role });
+        const { email, password} = req.body;
+        const storeValues = ({ email, password });
         const result = await registerUser(storeValues);
         res.status(result.status).json({ message: result.message });
     } catch (err) {
