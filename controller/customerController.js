@@ -1,9 +1,10 @@
 const {checkdata} = require("../services/customerService");
-
+const emailtoken = require("../middleware/validatetoken")
 
 const confirmMail = async(req,res)=>{
 
     try{
+
         const {email,bookId,quantity,orderDate} = req.body;
         if(!email || !bookId || !quantity ||!orderDate){
             res.status(400);

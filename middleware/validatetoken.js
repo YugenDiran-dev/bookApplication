@@ -19,6 +19,11 @@ const validateToken = asyncHandler(async (req, res, next) => {
         }
         console.log(decoded);
         req.role = decoded.user.role
+
+        function emailverify(){
+            return decoded.user.email;
+        }
+
         console.log("login as ",req.role);
         next();
 
