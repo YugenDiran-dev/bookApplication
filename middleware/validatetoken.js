@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken")
 const env = require("dotenv").config()
 
 const validateToken = asyncHandler(async (req, res, next) => {
-    // let token;
+
     let authHeader = req.headers.authorization
 
     const token = authHeader.split(" ")[1] || authHeader;
